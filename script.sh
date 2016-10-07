@@ -5,7 +5,13 @@
 echo "Install the packages..."
 #=========================================================
 sudo apt-get update
-sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox
+sudo apt-get -y install fluxbox xorg unzip vim default-jre rungetty firefox=28.0+build2-0ubuntu2 python python-pip xvfb
+sudo apt-mark hold firefox #to prevent firefox updates
+sudo pip install virtualenv
+sudo virtualenv ENV
+source ENV/bin/activate
+sudo pip install -r /vagrant/requirements.txt
+
 
 #=========================================================
 echo "Set autologin for the Vagrant user..."

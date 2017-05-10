@@ -31,6 +31,6 @@ After installing the VM via Vagrant you need to restart it by running the comman
 
 To connect to the VM Shell run 'vagrant ssh'
 
-Move to your synced folder by running 'cd /vagrant', here you will find the Scripts you dropped to the Folder that is including the vagrantfile, you will also find a Python Script call 'Websites.py' which scrapes through gelbeseiten.de
+Move to your synced folder by running 'cd /vagrant', here you will find the Scripts you dropped to the Folder that is including the vagrantfile.
 
 To start your script run 'xvfb-run python yourscript.py'

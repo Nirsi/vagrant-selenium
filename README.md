@@ -1,9 +1,9 @@
-# vagrant-selenium
-Vagrant configuration base on ubuntu/trusty64, ready to be used with Selenium.
+# Web Scraper using Vagrant with Selenium
+Vagrant configuration base on ubuntu/trusty64, ready to be used with Selenium and Python
 
 ## Introduction
 
-Selenium allows you to automate tests in Web Browsers. To do so, you need to have selenium webdriver installed for all the browsers that you want to run your test into.
+Selenium allows you to automate tests in Web Browsers.
 
 ## Installation
 
@@ -16,7 +16,6 @@ This vagrant works for *Virtualbox*, on a 64 bits machine.
 ## Browser support
 
 - Firefox (latest version)
-- Google Chrome (latest version)
 
 The script also installs the latest version of selenium server, and google chrome webdriver.
 
@@ -28,10 +27,10 @@ Thanks to this VM, you only need to start the VM, and all your tests will be run
 
 ## How does it work?
 
-When the VM starts, it automatically runs selenium server, along with the google-chrome webdriver. **You need to wait a few minutes** before running your tests.
+After installing the VM via Vagrant you need to restart it by running the command 'vagrant halt' and after that 'vagrant up', this is necessary to sync the folder inluding the vagrantfile with the folder '/vagrant' on the virtual machine.
 
-On your host machine, you can send the tests on this address: **localhost:4444**, just as if you installed selenium on your host machine.
+To connect to the VM Shell run 'vagrant ssh'
 
-## How to access the host from the guest machine?
+Move to your synced folder by running 'cd /vagrant', here you will find the Scripts you dropped to the Folder that is including the vagrantfile, you will also find a Python Script call 'Websites.py' which scrapes through gelbeseiten.de
 
-An alias already exists for your convenience: *http://host/* will target your host machine.
+To start your script run 'xvfb-run python yourscript.py'
